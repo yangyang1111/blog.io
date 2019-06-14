@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="十进制转度分秒  度分秒转十进制">
-<meta name="keywords" content="map">
+<meta name="description" content="markdown文件转HTML文件">
+<meta name="keywords" content="markdown">
 <meta property="og:type" content="article">
-<meta property="og:title" content="经纬度转换">
-<meta property="og:url" content="http://blog.mapscloud-yy.com/2019/06/13/HexadecimalToDecimal/index.html">
+<meta property="og:title" content="MTH">
+<meta property="og:url" content="http://blog.mapscloud-yy.com/2019/06/14/MTH/index.html">
 <meta property="og:site_name" content="Yang Yang Blog">
-<meta property="og:description" content="十进制转度分秒  度分秒转十进制">
+<meta property="og:description" content="markdown文件转HTML文件">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-13T05:54:25.315Z">
+<meta property="og:updated_time" content="2019-06-14T07:47:48.495Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="经纬度转换">
-<meta name="twitter:description" content="十进制转度分秒  度分秒转十进制">
+<meta name="twitter:title" content="MTH">
+<meta name="twitter:description" content="markdown文件转HTML文件">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -58,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>经纬度转换 | Yang Yang Blog</title>
+<title>MTH | Yang Yang Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -200,11 +200,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-HexadecimalToDecimal" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-MTH" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/06/13/HexadecimalToDecimal/" class="article-date">
-      <time datetime="2019-06-13T05:49:23.836Z" itemprop="datePublished">2019-06-13</time>
+      <a href="/2019/06/14/MTH/" class="article-date">
+      <time datetime="2019-06-14T07:20:00.808Z" itemprop="datePublished">2019-06-14</time>
 </a>
 
 
@@ -219,7 +219,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      经纬度转换
+      MTH
     </h1>
   
 
@@ -230,7 +230,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/map/">map</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/">markdown</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -240,12 +240,15 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>十进制转度分秒  度分秒转十进制</p>
+        <p>markdown文件转HTML文件</p>
 <a id="more"></a>
-<h3 id="十进制转度分秒"><a href="#十进制转度分秒" class="headerlink" title="十进制转度分秒"></a>十进制转度分秒</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">function formatHMS(latlng) &#123;</span><br><span class="line">    var lat = latlng.hasOwnProperty(&apos;lat&apos;) ? latlng.lat : latlng[0];</span><br><span class="line">    var lng = latlng.hasOwnProperty(&apos;lng&apos;) ? latlng.lng : latlng[1];</span><br><span class="line">    lng = lng%360;</span><br><span class="line">    if(lng&gt;180)&#123;</span><br><span class="line">        lng = (lng%180)-180;</span><br><span class="line">    &#125;else if(lng&lt;-180)&#123;</span><br><span class="line">        lng = 180+(lng%180);</span><br><span class="line">    &#125;    </span><br><span class="line">    function setHMS(f) &#123;</span><br><span class="line">        f = parseInt(f * 3600);</span><br><span class="line">        var h = parseInt(f / 3600);</span><br><span class="line">        var m = parseInt((f - h * 3600) / 60);</span><br><span class="line">        var s = parseInt((f - h * 3600 - m * 60));</span><br><span class="line">        if (m.toString().length == 1) &#123;</span><br><span class="line">            m = &apos;0&apos; + m.toString();</span><br><span class="line">        &#125;</span><br><span class="line">        if (s.toString().length == 1) &#123;</span><br><span class="line">            s = &apos;0&apos; + s.toString();</span><br><span class="line">        &#125;</span><br><span class="line">        return h + &apos;\u00b0&apos; + m + &apos;\u2032&apos; + s + &apos;\u2033&apos;;</span><br><span class="line">    &#125;</span><br><span class="line">    var nLat = &apos;&apos;;</span><br><span class="line">    var nLng = &apos;&apos;;</span><br><span class="line">    if (lat &lt; 0) &#123;</span><br><span class="line">        nLat = setHMS(lat * -1)+&apos;S&apos;;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        nLat = setHMS(lat)+&apos;N&apos;;</span><br><span class="line">    &#125;</span><br><span class="line">    if (lng &lt; 0) &#123;</span><br><span class="line">        nLng = setHMS(lng * -1)+&apos;W&apos;;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        nLng = setHMS(lng)+&apos;E&apos;;</span><br><span class="line">    &#125;</span><br><span class="line">    return &#123;</span><br><span class="line">        lat: nLat,</span><br><span class="line">        lng: nLng</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h2><p>在你的md文件目录下，打开命令行工具，安装i5ting_toc</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g i5ting_toc</span><br></pre></td></tr></table></figure>
 
-<h3 id="度分秒转十进制"><a href="#度分秒转十进制" class="headerlink" title="度分秒转十进制"></a>度分秒转十进制</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function HMStoLatLng(p, d, f, m) &#123;</span><br><span class="line">    var dfm = parseFloat(d) + parseFloat(f) / 60 + parseFloat(m) / 3600;</span><br><span class="line">    if (p.toLowerCase() === &apos;w&apos; || p.toLowerCase() === &apos;s&apos;) &#123;</span><br><span class="line">        dfm = -1 * dfm;</span><br><span class="line">    &#125;</span><br><span class="line">    return dfm;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h2><p>执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">i5ting_toc -f xxxx.md -o</span><br></pre></td></tr></table></figure>
 
+<p>恭喜你，你可以在preview目录中查看你的网页</p>
 
       
     </div>
@@ -254,13 +257,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/06/13/HexadecimalToDecimal/">经纬度转换</a></p>
+        <p><span>本文标题:</span><a href="/2019/06/14/MTH/">MTH</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">杨阳</a></p>
-        <p><span>发布时间:</span>2019-06-13, 13:49:23</p>
-        <p><span>最后更新:</span>2019-06-13, 13:54:25</p>
+        <p><span>发布时间:</span>2019-06-14, 15:20:00</p>
+        <p><span>最后更新:</span>2019-06-14, 15:47:48</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/06/13/HexadecimalToDecimal/" title="经纬度转换">http://blog.mapscloud-yy.com/2019/06/13/HexadecimalToDecimal/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://blog.mapscloud-yy.com/2019/06/13/HexadecimalToDecimal/　　作者: 杨阳" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/06/14/MTH/" title="MTH">http://blog.mapscloud-yy.com/2019/06/14/MTH/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://blog.mapscloud-yy.com/2019/06/14/MTH/　　作者: 杨阳" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -272,16 +275,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/06/13/cesiumMap/">
-                    全息地球
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/06/13/CoordinateTtransformation-md/">
-                    坐标转换
+                <a href="/2019/06/13/cesiumMap/">
+                    全息地球
                 </a>
             </div>
         
@@ -293,7 +290,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#十进制转度分秒"><span class="toc-number">1.</span> <span class="toc-text">十进制转度分秒</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#度分秒转十进制"><span class="toc-number">2.</span> <span class="toc-text">度分秒转十进制</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一步"><span class="toc-number">1.</span> <span class="toc-text">第一步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第二步"><span class="toc-number">2.</span> <span class="toc-text">第二步</span></a></li></ol>
         
     </div>
     <style>
@@ -329,7 +326,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"经纬度转换　| Yang Yang Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"MTH　| Yang Yang Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -349,15 +346,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/06/13/cesiumMap/" title="上一篇: 全息地球">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/06/13/CoordinateTtransformation-md/" title="下一篇: 坐标转换">
+            <a href="/2019/06/13/cesiumMap/" title="下一篇: 全息地球">
                 <i class="fa fa-angle-right"></i>
             </a>
         
