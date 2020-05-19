@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="vuex使用是方法  socket.io 使用方法">
+<meta name="description" content="vuex使用方法  socket.io 使用方法">
 <meta name="keywords" content="vuex socket.io">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue 组件">
 <meta property="og:url" content="http://blog.mapscloud-yy.com/2020/05/19/vue-components/index.html">
 <meta property="og:site_name" content="Yang Yang Blog">
-<meta property="og:description" content="vuex使用是方法  socket.io 使用方法">
+<meta property="og:description" content="vuex使用方法  socket.io 使用方法">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-05-19T09:32:45.050Z">
+<meta property="og:updated_time" content="2020-05-19T09:41:30.484Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue 组件">
-<meta name="twitter:description" content="vuex使用是方法  socket.io 使用方法">
+<meta name="twitter:description" content="vuex使用方法  socket.io 使用方法">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -240,9 +240,9 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>vuex使用是方法  socket.io 使用方法</p>
+        <p>vuex使用方法  socket.io 使用方法</p>
 <a id="more"></a>
-<h2 id="vue-组件心得"><a href="#vue-组件心得" class="headerlink" title="vue 组件心得"></a>vue 组件心得</h2><h3 id="vuex-vue状态管理器"><a href="#vuex-vue状态管理器" class="headerlink" title="vuex vue状态管理器"></a>vuex vue状态管理器</h3><h4 id="vuex-使用说明"><a href="#vuex-使用说明" class="headerlink" title="vuex 使用说明"></a>vuex 使用说明</h4><ul>
+<h2 id="vue-组件心得"><a href="#vue-组件心得" class="headerlink" title="vue 组件心得"></a>vue 组件心得</h2><h3 id="vuex-vue状态管理器"><a href="#vuex-vue状态管理器" class="headerlink" title="vuex vue状态管理器"></a>vuex vue状态管理器</h3><ul>
 <li><p>安装vuex</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i vuex -s</span><br></pre></td></tr></table></figure>
 </li>
@@ -265,8 +265,6 @@
 </li>
 </ul>
 <h4 id="vuex-组成部分"><a href="#vuex-组成部分" class="headerlink" title="vuex 组成部分"></a>vuex 组成部分</h4><ul>
-<li><p>vuex index.js组成部分</p>
-<ul>
 <li><p>state 存放状态<br>示例</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//增加数据</span></span><br><span class="line">Vue.set(state,<span class="string">"age"</span>,<span class="number">15</span>)</span><br><span class="line"><span class="comment">//删除数据</span></span><br><span class="line">Vue.delete(state,<span class="string">'age'</span>)</span><br></pre></td></tr></table></figure>
 </li>
@@ -281,13 +279,17 @@
 </li>
 <li><p>modules 模块化状态管理</p>
 </li>
-</ul>
-</li>
 <li><p>index.js 完整示例</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> Vuex <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line"></span><br><span class="line">Vue.use(Vuex);</span><br><span class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">    state: &#123;</span><br><span class="line">        access_token: <span class="number">0</span></span><br><span class="line">    &#125;,</span><br><span class="line">    getters: &#123;</span><br><span class="line">        getaccess_token: <span class="function"><span class="keyword">function</span>(<span class="params">state</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> state.access_token</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    mutations: &#123; </span><br><span class="line">        change(state,num)&#123;</span><br><span class="line">            state.access_token = num;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    actions: &#123;</span><br><span class="line">        changeMenuS(context,num)&#123;</span><br><span class="line">            context.commit(<span class="string">"change"</span>,num);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;) </span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> store</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>组件监听状态变化</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">watch: &#123;</span><br><span class="line">  <span class="string">"$store.state.message"</span>: <span class="function"><span class="keyword">function</span>(<span class="params">value</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//将要执行的函数</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="string">``</span><span class="string">` </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">### socket.io</span></span><br><span class="line"><span class="string">#### js 外链引入socket.io js 包</span></span><br><span class="line"><span class="string">- 引入socketio js库</span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>javascript</span><br><span class="line">&lt;script src=<span class="string">'http://cdn.bootcss.com/socket.io/1.3.7/socket.io.js'</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">watch: &#123;</span><br><span class="line">  <span class="string">"$store.state.message"</span>: <span class="function"><span class="keyword">function</span>(<span class="params">value</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//将要执行的函数</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="socket-io"><a href="#socket-io" class="headerlink" title="socket.io"></a>socket.io</h3><h4 id="js-外链引入socket-io-js-包"><a href="#js-外链引入socket-io-js-包" class="headerlink" title="js 外链引入socket.io js 包"></a>js 外链引入socket.io js 包</h4><ul>
+<li><p>引入socketio js库</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">'http://cdn.bootcss.com/socket.io/1.3.7/socket.io.js'</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>建立 socketio 链接</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> socket = io(<span class="string">'ws://192.168.2.105:5000'</span>);</span><br><span class="line">socket.on(<span class="string">'connect'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'已连接socketio'</span>)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
@@ -330,7 +332,7 @@
         <p><span>本文标题:</span><a href="/2020/05/19/vue-components/">vue 组件</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">杨阳</a></p>
         <p><span>发布时间:</span>2020-05-19, 17:30:45</p>
-        <p><span>最后更新:</span>2020-05-19, 17:32:45</p>
+        <p><span>最后更新:</span>2020-05-19, 17:41:30</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2020/05/19/vue-components/" title="vue 组件">http://blog.mapscloud-yy.com/2020/05/19/vue-components/</a>
             <span class="copy-path" data-clipboard-text="原文: http://blog.mapscloud-yy.com/2020/05/19/vue-components/　　作者: 杨阳" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -360,7 +362,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#vue-组件心得"><span class="toc-number">1.</span> <span class="toc-text">vue 组件心得</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#vuex-vue状态管理器"><span class="toc-number">1.1.</span> <span class="toc-text">vuex vue状态管理器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#vuex-使用说明"><span class="toc-number">1.1.1.</span> <span class="toc-text">vuex 使用说明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#vuex-组成部分"><span class="toc-number">1.1.2.</span> <span class="toc-text">vuex 组成部分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#vue-socket-io"><span class="toc-number">1.1.3.</span> <span class="toc-text">vue-socket.io</span></a></li></ol></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#vue-组件心得"><span class="toc-number">1.</span> <span class="toc-text">vue 组件心得</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#vuex-vue状态管理器"><span class="toc-number">1.1.</span> <span class="toc-text">vuex vue状态管理器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#vuex-组成部分"><span class="toc-number">1.1.1.</span> <span class="toc-text">vuex 组成部分</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#socket-io"><span class="toc-number">1.2.</span> <span class="toc-text">socket.io</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#js-外链引入socket-io-js-包"><span class="toc-number">1.2.1.</span> <span class="toc-text">js 外链引入socket.io js 包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#vue-socket-io"><span class="toc-number">1.2.2.</span> <span class="toc-text">vue-socket.io</span></a></li></ol></li></ol></li></ol>
         
     </div>
     <style>
