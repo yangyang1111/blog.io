@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="十进制转度分秒  度分秒转十进制">
-<meta name="keywords" content="map">
+<meta name="description" content="js基础">
+<meta name="keywords" content="灵光一闪">
 <meta property="og:type" content="article">
-<meta property="og:title" content="经纬度转换">
-<meta property="og:url" content="http://blog.mapscloud-yy.com/2019/06/13/HexadecimalToDecimal/index.html">
+<meta property="og:title" content="lgys.md">
+<meta property="og:url" content="http://blog.mapscloud-yy.com/2020/05/28/lgys-md/index.html">
 <meta property="og:site_name" content="Yang Yang Blog">
-<meta property="og:description" content="十进制转度分秒  度分秒转十进制">
+<meta property="og:description" content="js基础">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-13T05:54:25.315Z">
+<meta property="og:updated_time" content="2020-05-28T09:26:13.299Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="经纬度转换">
-<meta name="twitter:description" content="十进制转度分秒  度分秒转十进制">
+<meta name="twitter:title" content="lgys.md">
+<meta name="twitter:description" content="js基础">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -58,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>经纬度转换 | Yang Yang Blog</title>
+<title>lgys.md | Yang Yang Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -200,11 +200,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-HexadecimalToDecimal" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-lgys-md" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/06/13/HexadecimalToDecimal/" class="article-date">
-      <time datetime="2019-06-13T05:49:23.836Z" itemprop="datePublished">2019-06-13</time>
+      <a href="/2020/05/28/lgys-md/" class="article-date">
+      <time datetime="2020-05-28T09:24:08.000Z" itemprop="datePublished">2020-05-28</time>
 </a>
 
 
@@ -219,7 +219,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      经纬度转换
+      lgys.md
     </h1>
   
 
@@ -230,7 +230,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/map/">map</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/灵光一闪/">灵光一闪</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -240,12 +240,75 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>十进制转度分秒  度分秒转十进制</p>
+        <p>js基础</p>
 <a id="more"></a>
-<h3 id="十进制转度分秒"><a href="#十进制转度分秒" class="headerlink" title="十进制转度分秒"></a>十进制转度分秒</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">function formatHMS(latlng) &#123;</span><br><span class="line">    var lat = latlng.hasOwnProperty(&apos;lat&apos;) ? latlng.lat : latlng[0];</span><br><span class="line">    var lng = latlng.hasOwnProperty(&apos;lng&apos;) ? latlng.lng : latlng[1];</span><br><span class="line">    lng = lng%360;</span><br><span class="line">    if(lng&gt;180)&#123;</span><br><span class="line">        lng = (lng%180)-180;</span><br><span class="line">    &#125;else if(lng&lt;-180)&#123;</span><br><span class="line">        lng = 180+(lng%180);</span><br><span class="line">    &#125;    </span><br><span class="line">    function setHMS(f) &#123;</span><br><span class="line">        f = parseInt(f * 3600);</span><br><span class="line">        var h = parseInt(f / 3600);</span><br><span class="line">        var m = parseInt((f - h * 3600) / 60);</span><br><span class="line">        var s = parseInt((f - h * 3600 - m * 60));</span><br><span class="line">        if (m.toString().length == 1) &#123;</span><br><span class="line">            m = &apos;0&apos; + m.toString();</span><br><span class="line">        &#125;</span><br><span class="line">        if (s.toString().length == 1) &#123;</span><br><span class="line">            s = &apos;0&apos; + s.toString();</span><br><span class="line">        &#125;</span><br><span class="line">        return h + &apos;\u00b0&apos; + m + &apos;\u2032&apos; + s + &apos;\u2033&apos;;</span><br><span class="line">    &#125;</span><br><span class="line">    var nLat = &apos;&apos;;</span><br><span class="line">    var nLng = &apos;&apos;;</span><br><span class="line">    if (lat &lt; 0) &#123;</span><br><span class="line">        nLat = setHMS(lat * -1)+&apos;S&apos;;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        nLat = setHMS(lat)+&apos;N&apos;;</span><br><span class="line">    &#125;</span><br><span class="line">    if (lng &lt; 0) &#123;</span><br><span class="line">        nLng = setHMS(lng * -1)+&apos;W&apos;;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        nLng = setHMS(lng)+&apos;E&apos;;</span><br><span class="line">    &#125;</span><br><span class="line">    return &#123;</span><br><span class="line">        lat: nLat,</span><br><span class="line">        lng: nLng</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h3 id="度分秒转十进制"><a href="#度分秒转十进制" class="headerlink" title="度分秒转十进制"></a>度分秒转十进制</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function HMStoLatLng(p, d, f, m) &#123;</span><br><span class="line">    var dfm = parseFloat(d) + parseFloat(f) / 60 + parseFloat(m) / 3600;</span><br><span class="line">    if (p.toLowerCase() === &apos;w&apos; || p.toLowerCase() === &apos;s&apos;) &#123;</span><br><span class="line">        dfm = -1 * dfm;</span><br><span class="line">    &#125;</span><br><span class="line">    return dfm;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
+<h3 id="git小结"><a href="#git小结" class="headerlink" title="git小结"></a>git小结</h3><ul>
+<li>git的基本原理<ul>
+<li>1： git 依靠哈希算法机制来从根本上保证数据的完整性</li>
+<li>2： git 把数据看成小型文件系统的一组快照，每次提交更新等操作，git都会产生一组索引和快照，工作方式成为快照流，因此查找效率高效</li>
+<li>3： git 分支操作，依赖于指针变化</li>
+</ul>
+</li>
+<li>git 命令操作<ul>
+<li>git clone ‘ssh’<br>克隆远程仓库</li>
+<li>git init<br>创建本地git</li>
+<li>touch name<br>创建本地文件</li>
+<li>git add .<br>提交到本地缓存</li>
+<li>git add -A<br>将所有变动提交为本地缓存</li>
+<li>git commit -m ‘message’<br>将变动提交到本地仓库</li>
+<li>git push origin branch<br>提交到远程仓库分支</li>
+<li>git remote add origin ‘ssh’<br>添加远程仓库至本地</li>
+<li>git log<br>查看提交历史</li>
+<li>git reset –herd ‘id’<br>根据id回滚</li>
+<li>git revert -n ‘id’<br>删除中间某一次版本，保留后面的版本</li>
+<li>git rebase -i HEAD~4<br>整理四次提交为一个，避免代码污染，分支分叉</li>
+<li>git branch -d ‘name’<br>删除本地分支</li>
+<li>git push origin –delete ‘name’<br>删除远程分支</li>
+<li>还原删除的分支<br>1 git log -g 查看删除哈希值<br>2 git branch ‘name’ head@{1}</li>
+</ul>
+</li>
+</ul>
+<h3 id="webpack-小结"><a href="#webpack-小结" class="headerlink" title="webpack 小结"></a>webpack 小结</h3><ul>
+<li><p>一个基本webpack配置文件的组成<br>配置文件 entry（入口）和 出口 (output)<br>Loader的机制<br>plugin</p>
+</li>
+<li><p>loader 和 plugin 不同<br>loader 用于对模块的源代码进行转换<br>插件是 webpack 的支柱功能。webpack 自身也是构建于，你在 webpack 配置中用到的相同的插件系统之上！<br>插件目的在于解决 loader 无法实现的其他事。</p>
+</li>
+<li><p>简述下vue-loader在解析一个vue文件的过程<br>先将tem、script、css提取出来<br>然后合并打包</p>
+</li>
+<li><p>简述下webpack打包出来的js文件的基本代码结构<br>首先声明一个函数体，里面包括各种打包的js组件</p>
+<h3 id="es6-语法小结"><a href="#es6-语法小结" class="headerlink" title="es6 语法小结"></a>es6 语法小结</h3></li>
+<li><p>let和const的作用域,如果用es5去实现,应该如何实现,或者说在es6转es5是,是如何处理let和const的–defineProterty的writeable<br>let与const定义区域块变量，同一区域块中不能重复声明，var可以定义全局变量，可以提升声明的作用域。es5在函数中声明变量，更改作用域。let的defineProterty的writeable为true，可以修改，const的defineProterty的writeable为false，不能修改。</p>
+</li>
+<li><p>你对Iterator迭代器的理解,与for of搭配使用是的调用原理–Symbol.iterator接的自动调用<br>Iterator迭代器 ==&gt; for of<br>原理：迭代器具有next()方法，每次调用next方法时会返回一个key值与value值</p>
+</li>
+<li><p>你知道的都有那哪些定义模块的规范.包的规范,amd,cmd,commonjs,esmoudle.cmd是如何实现包的就近引用的.</p>
+<ul>
+<li><p>AMD<br>AMD是requireJS倡导的一种模块化规范，推崇依赖前置；在requireJS中模块是通过define来进行定义的，如果模块之间相互依赖，需要先将依赖模块导入进来，待导入完毕之后，在通过回掉函数的方式执行后面的代码，有效的解决了模块依赖的问题。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">define([<span class="string">'AModuleJs'</span>,<span class="string">'BModuleJS'</span>], <span class="comment">// AModuleJs,BModuleJS分别对应两个js文件（模块），运行至此已经下载完成，可直接使用</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> (<span class="params">AModuleJs, BModuleJS</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = AModuleJs();</span><br><span class="line">    <span class="keyword">var</span> b = BModuleJS;</span><br><span class="line">    <span class="keyword">var</span> c = a + b;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>CMD<br>CMD则是seaJS倡导的一种解决模块之间相互依赖规范,推崇依赖就近；在seaJS中一个脚本文件就是一个模块,所有的模块代码写在define的回调函数中，传递三个参数require,exports,module，通过使用 module.exports(exports) 对象向外暴露。</p>
+</li>
+<li><p>commonjs<br>每一个文件就是一个模块，拥有自己独立的作用域，变量，以及方法等，对其他的模块都不可见,具有不污染的特性。加载顺序按照代码顺序加载，但只会加载一次，然后缓存起来，同步加载。</p>
+</li>
+</ul>
+</li>
+<li><p>如果你写的一个模块导出的是个对象,这个对象里有一个key对应的value是个方法,方法了有this,如果通过结构单独导出这个方法,执行这个方法,this会指向谁<br>第一个this指向对象，第二个this指向方法</p>
+</li>
+<li><p>说下你对symbol的理解,Symbol.for的缺陷<br>symbol ：一种数据类型<br>Symbol.for 会根据key查找是否已经创建，如果你已经创建key，会直接返回。定义的数据会绑定到全局中</p>
+</li>
+<li><p>es5,bind实现原理<br>bind() 函数会创建一个新函数（称为绑定函数），新函数与被调函数（绑定函数的目标函数）具有相同的函数体（在 ECMAScript 5 规范中内置的call属性）。当目标函数被调用时 this 值绑定到 bind() 的第一个参数，该参数不能被重写。绑定函数被调用时，bind() 也接受预设的参数提供给原函数。一个绑定函数也能使用new操作符创建对象：这种行为就像把原函数当成构造器。提供的 this 值被忽略，同时调用时的参数被提供给模拟函数。</p>
+</li>
+</ul>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ul>
+<li>如果让你写一个类似element-ui库,你会如何规划文件结构,组件库结构,公共配置文件结构<br>config images templates styles scripts(mod、script)</li>
+<li>简述观察者模式和发布订阅模式<br>bind<br>第三者</li>
+<li>简述下跨域,跨域是请求数据回到浏览器了吗<br>请求回到了浏览器，但是数据被阻断</li>
+<li>js垃圾回收,那些会导致内存泄漏<br>dOM操作<br>全局变量<br>相互引用<br>定时器、回调函数</li>
+<li>map和forEach区别<br>map 返回意义值<br>forEach 返回简单值，无任何意义</li>
+<li>简述内存的栈和堆<br>栈：具有索引和具体大小<br>堆：大小不固定，需要多少，内存给多少</li>
+<li>HTTPS协议为什么能保证安全–非对称加密<br>源服务器和客户端服务器解密的key不同</li>
+<li>定时器为什么是不精确的<br>定时器是同步的，代码执行也需要时间</li>
+</ul>
 
       
     </div>
@@ -254,13 +317,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/06/13/HexadecimalToDecimal/">经纬度转换</a></p>
+        <p><span>本文标题:</span><a href="/2020/05/28/lgys-md/">lgys.md</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">杨阳</a></p>
-        <p><span>发布时间:</span>2019-06-13, 13:49:23</p>
-        <p><span>最后更新:</span>2019-06-13, 13:54:25</p>
+        <p><span>发布时间:</span>2020-05-28, 17:24:08</p>
+        <p><span>最后更新:</span>2020-05-28, 17:26:13</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/06/13/HexadecimalToDecimal/" title="经纬度转换">http://blog.mapscloud-yy.com/2019/06/13/HexadecimalToDecimal/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://blog.mapscloud-yy.com/2019/06/13/HexadecimalToDecimal/　　作者: 杨阳" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/05/28/lgys-md/" title="lgys.md">http://blog.mapscloud-yy.com/2020/05/28/lgys-md/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://blog.mapscloud-yy.com/2020/05/28/lgys-md/　　作者: 杨阳" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -272,16 +335,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/06/13/cesiumMap/">
-                    全息地球
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/06/13/CoordinateTtransformation-md/">
-                    坐标转换
+                <a href="/2020/05/19/vue-components/">
+                    vue 组件
                 </a>
             </div>
         
@@ -293,7 +350,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#十进制转度分秒"><span class="toc-number">1.</span> <span class="toc-text">十进制转度分秒</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#度分秒转十进制"><span class="toc-number">2.</span> <span class="toc-text">度分秒转十进制</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#git小结"><span class="toc-number">1.</span> <span class="toc-text">git小结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#webpack-小结"><span class="toc-number">2.</span> <span class="toc-text">webpack 小结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#es6-语法小结"><span class="toc-number">3.</span> <span class="toc-text">es6 语法小结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他"><span class="toc-number">4.</span> <span class="toc-text">其他</span></a></li></ol>
         
     </div>
     <style>
@@ -329,7 +386,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"经纬度转换　| Yang Yang Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"lgys.md　| Yang Yang Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -349,15 +406,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/06/13/cesiumMap/" title="上一篇: 全息地球">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/06/13/CoordinateTtransformation-md/" title="下一篇: 坐标转换">
+            <a href="/2020/05/19/vue-components/" title="下一篇: vue 组件">
                 <i class="fa fa-angle-right"></i>
             </a>
         
