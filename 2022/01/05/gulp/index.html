@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta name="author" content="杨阳">
+
+
+
+<meta name="description" content="npm gulp">
+<meta name="keywords" content="web">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用gulp进行代码压缩">
+<meta property="og:url" content="http://blog.mapscloud-yy.com/2022/01/05/gulp/index.html">
+<meta property="og:site_name" content="Yang Yang Blog">
+<meta property="og:description" content="npm gulp">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-06-13T05:55:09.305Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用gulp进行代码压缩">
+<meta name="twitter:description" content="npm gulp">
+
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="Yang Yang Blog" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>使用gulp进行代码压缩 | Yang Yang Blog</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head></html>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">杨阳</a></h1>
+        </hgroup>
+
+        
+
+        
+
+
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">杨阳</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">杨阳</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
+</nav>
+      <div class="body-wrap"><article id="post-gulp" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/01/05/gulp/" class="article-date">
+      <time datetime="2022-01-05T08:38:25.004Z" itemprop="datePublished">2022-01-05</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      使用gulp进行代码压缩
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>npm gulp</p>
+<a id="more"></a>
+<p><strong>鲁迅说任何人都离不开压缩</strong></p>
+<h2 id="gulp使用指南"><a href="#gulp使用指南" class="headerlink" title="gulp使用指南"></a>gulp使用指南</h2><p><a href="https://www.gulpjs.com.cn/docs/getting-started" target="_blank" rel="noopener">gulp 中文使用指南</a> </p>
+<h3 id="先安装好吧"><a href="#先安装好吧" class="headerlink" title="先安装好吧"></a>先安装好吧</h3><h4 id="首先你要安装npm"><a href="#首先你要安装npm" class="headerlink" title="首先你要安装npm"></a>首先你要安装npm</h4><p>cmd一下  npm -v 如果出现版本号，好吧，恭喜你这一步不用走了，如果没有那就再敲一句命令吧</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --global gulp</span><br></pre></td></tr></table></figure>
+
+<p>完成后 在运行下 npm -v就会发现版本号了</p>
+<h4 id="然后就要安装gulp"><a href="#然后就要安装gulp" class="headerlink" title="然后就要安装gulp"></a>然后就要安装gulp</h4><p>如果想简单点直接</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev gulp</span><br></pre></td></tr></table></figure>
+
+<p>如果想和我一样不想简单，复制我的代码，去根目录创建package.json</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;xxxx&quot;,</span><br><span class="line">  &quot;version&quot;: &quot;1.0.0&quot;,</span><br><span class="line">  &quot;description&quot;: &quot;&quot;,</span><br><span class="line">  &quot;main&quot;: &quot;packing.js&quot;,</span><br><span class="line">  &quot;directories&quot;: &#123;</span><br><span class="line">    &quot;doc&quot;: &quot;doc&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;scripts&quot;: &#123;</span><br><span class="line">    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;author&quot;: &quot;xxx&quot;,</span><br><span class="line">  &quot;license&quot;: &quot;&quot;,</span><br><span class="line">  &quot;devDependencies&quot;: &#123;</span><br><span class="line">    &quot;del&quot;: &quot;^2.2.2&quot;,</span><br><span class="line">    &quot;gulp&quot;: &quot;^3.9.1&quot;,</span><br><span class="line">    &quot;gulp-concat&quot;: &quot;^2.6.1&quot;,</span><br><span class="line">    &quot;gulp-jshint&quot;: &quot;^2.1.0&quot;,</span><br><span class="line">    &quot;gulp-minify-css&quot;: &quot;^1.2.4&quot;,</span><br><span class="line">    &quot;gulp-notify&quot;: &quot;^2.2.0&quot;,</span><br><span class="line">    &quot;gulp-rename&quot;: &quot;^1.3.0&quot;,</span><br><span class="line">    &quot;gulp-uglify&quot;: &quot;^2.1.2&quot;,</span><br><span class="line">    &quot;jshint&quot;: &quot;^2.9.5&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;dependencies&quot;: &#123;</span><br><span class="line">    &quot;delete&quot;: &quot;^1.1.0&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后再</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<h4 id="在项目根目录下创建一个名为-gulpfile-js-的文件"><a href="#在项目根目录下创建一个名为-gulpfile-js-的文件" class="headerlink" title="在项目根目录下创建一个名为 gulpfile.js 的文件"></a>在项目根目录下创建一个名为 gulpfile.js 的文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var gulp = require(&apos;gulp&apos;);</span><br><span class="line"></span><br><span class="line">gulp.task(&apos;default&apos;, function() &#123;</span><br><span class="line">  // 将你的默认的任务代码放在这</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>这是我的一个示例文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br></pre></td><td class="code"><pre><span class="line">var gulp = require(&apos;gulp&apos;),</span><br><span class="line">    del = require(&apos;del&apos;),</span><br><span class="line">    minifycss = require(&apos;gulp-minify-css&apos;),</span><br><span class="line">    concat = require(&apos;gulp-concat&apos;),</span><br><span class="line">    uglify = require(&apos;gulp-uglify&apos;),</span><br><span class="line">    rename = require(&apos;gulp-rename&apos;),</span><br><span class="line">    jshint = require(&apos;gulp-jshint&apos;),//js检测</span><br><span class="line">    notify = require(&apos;gulp-notify&apos;);//提示信息</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    // 清空dist目录</span><br><span class="line">    gulp.task(&apos;clean&apos;, function() &#123;</span><br><span class="line">        return del([&apos;dist/*.js&apos;,&apos;dist/*.css&apos;])</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    // 拷贝图片</span><br><span class="line">    gulp.task(&quot;imgcopy&quot;, function () &#123;//图片拷贝</span><br><span class="line">        gulp.src([</span><br><span class="line">            &quot;./webroot/scripts/images/&quot;</span><br><span class="line">        ])</span><br><span class="line">        .pipe(gulp.dest(&apos;dist/images&apos;))</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    // 合并、压缩、重命名css</span><br><span class="line">    gulp.task(&apos;minifycss&apos;, function() &#123;</span><br><span class="line">      return gulp.src([</span><br><span class="line">        &apos;./webroot/styles/clock.css&apos;,</span><br><span class="line">        &apos;./webroot/styles/popupHtml.css&apos;,</span><br><span class="line">        &apos;./webroot/styles/styles/basic.css&apos;,</span><br><span class="line">        &apos;./webroot/scripts/vendor/simpleDraw/DrawHelper.css&apos;</span><br><span class="line">        ])</span><br><span class="line">        .pipe(concat(&apos;map23dlib.css&apos;))</span><br><span class="line">        .pipe(gulp.dest(&apos;dist&apos;))</span><br><span class="line">        .pipe(rename(&#123; suffix: &apos;.min&apos; &#125;))</span><br><span class="line">        .pipe(minifycss())</span><br><span class="line">        .pipe(gulp.dest(&apos;dist&apos;));</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    // 合并、压缩、重命名css</span><br><span class="line">    gulp.task(&apos;nolib-minifycss&apos;, function() &#123;</span><br><span class="line">      return gulp.src([</span><br><span class="line">        &apos;./webroot/styles/clock.css&apos;,</span><br><span class="line">        &apos;./webroot/styles/popupHtml.css&apos;,</span><br><span class="line">        &apos;./webroot/styles/styles/basic.css&apos;,</span><br><span class="line">        ])</span><br><span class="line">        .pipe(concat(&apos;map23dlib-nolib.css&apos;))</span><br><span class="line">        .pipe(gulp.dest(&apos;dist&apos;))</span><br><span class="line">        .pipe(rename(&#123; suffix: &apos;.min&apos; &#125;))</span><br><span class="line">        .pipe(minifycss())</span><br><span class="line">        .pipe(gulp.dest(&apos;dist&apos;));</span><br><span class="line">    &#125;);</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">    var jsAry = [</span><br><span class="line">            &apos;./webroot/scripts/vendor/mapControl/mapControlFun.js&apos;,</span><br><span class="line">            &apos;./webroot/scripts/vendor/mapControl/mapControlData.js&apos;,</span><br><span class="line">            &apos;./webroot/scripts/vendor/mapControl/mapControl.js&apos;,</span><br><span class="line">            &apos;./webroot/scripts/vendor/mapControl/mapControlEx.js&apos;,</span><br><span class="line">            &apos;./webroot/scripts/vendor/mapControl/meatureDistance.js&apos;,</span><br><span class="line">            &apos;./webroot/scripts/vendor/mapControl/meatureArea.js&apos;,</span><br><span class="line">            &apos;./webroot/scripts/vendor/mapControl/meatureElevation.js&apos;,</span><br><span class="line">            &apos;./webroot/scripts/vendor/mapControl/marker.js&apos;,</span><br><span class="line">            &apos;./webroot/scripts/vendor/mapControl/point.js&apos;,</span><br><span class="line">            &apos;./webroot/scripts/vendor/mapControl/polyline.js&apos;,</span><br><span class="line">            &apos;./webroot/scripts/vendor/mapControl/polygon.js&apos;,</span><br><span class="line">            &apos;./webroot/scripts/vendor/mapControl/circle.js&apos;,</span><br><span class="line">            &apos;./webroot/scripts/vendor/mapControl/layers.js&apos;,</span><br><span class="line">            &apos;./webroot/scripts/vendor/mapControl/imageLayer.js&apos;,</span><br><span class="line">            &apos;./webroot/scripts/vendor/mapControl/mapControlFun.js&apos;,</span><br><span class="line">            &apos;./webroot/scripts/vendor/mapControl/models.js&apos;,</span><br><span class="line">            &apos;./webroot/scripts/vendor/mapControl/dataSource.js&apos;,</span><br><span class="line">            &apos;./webroot/scripts/vendor/satelite/satellite.js&apos;,</span><br><span class="line">            &apos;./webroot/scripts/vendor/simpleDraw/DrawHelper.js&apos;,</span><br><span class="line">        ];</span><br><span class="line"></span><br><span class="line">    var jsNoLibAry = [ </span><br><span class="line">            &apos;./webroot/scripts/vendor/mapControl/mapControlFun.js&apos;,</span><br><span class="line">            &apos;./webroot/scripts/vendor/mapControl/mapControlData.js&apos;,</span><br><span class="line">            &apos;./webroot/scripts/vendor/mapControl/mapControl.js&apos;,</span><br><span class="line">            &apos;./webroot/scripts/vendor/mapControl/mapControlEx.js&apos;,</span><br><span class="line">            &apos;./webroot/scripts/vendor/mapControl/meatureDistance.js&apos;,</span><br><span class="line">            &apos;./webroot/scripts/vendor/mapControl/meatureArea.js&apos;,</span><br><span class="line">            &apos;./webroot/scripts/vendor/mapControl/meatureElevation.js&apos;,</span><br><span class="line">            &apos;./webroot/scripts/vendor/mapControl/marker.js&apos;,</span><br><span class="line">            &apos;./webroot/scripts/vendor/mapControl/point.js&apos;,</span><br><span class="line">            &apos;./webroot/scripts/vendor/mapControl/polyline.js&apos;,</span><br><span class="line">            &apos;./webroot/scripts/vendor/mapControl/polygon.js&apos;,</span><br><span class="line">            &apos;./webroot/scripts/vendor/mapControl/circle.js&apos;,</span><br><span class="line">            &apos;./webroot/scripts/vendor/mapControl/layers.js&apos;,</span><br><span class="line">            &apos;./webroot/scripts/vendor/mapControl/imageLayer.js&apos;,</span><br><span class="line">            &apos;./webroot/scripts/vendor/mapControl/mapControlFun.js&apos;,</span><br><span class="line">            &apos;./webroot/scripts/vendor/mapControl/models.js&apos;,</span><br><span class="line">            &apos;./webroot/scripts/vendor/mapControl/dataSource.js&apos;,</span><br><span class="line">        ];</span><br><span class="line"></span><br><span class="line">    // 检查js</span><br><span class="line">    gulp.task(&apos;lint&apos;, function() &#123;</span><br><span class="line">      return gulp.src(jsAry)</span><br><span class="line">        .pipe(jshint())</span><br><span class="line">        .pipe(jshint.reporter(&apos;default&apos;));</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    //压缩,合并 js</span><br><span class="line">    gulp.task(&apos;minifyjs&apos;, function() &#123;</span><br><span class="line">        return gulp.src(jsAry)      //需要操作的文件</span><br><span class="line">            .pipe(concat(&apos;map23dlib.js&apos;))    //合并所有js到main.js</span><br><span class="line">            .pipe(gulp.dest(&apos;dist&apos;))       //输出到文件夹</span><br><span class="line">            .pipe(rename(&#123;suffix: &apos;.min&apos;&#125;))   //rename压缩后的文件名</span><br><span class="line">            .pipe(uglify(&#123;</span><br><span class="line">                    mangle: false, //不混淆变量名</span><br><span class="line">                    compress:false,</span><br><span class="line">                    preserveComments: false //all 不删除注释，还可以为 false（删除全部注释），some（保留@preserve @license @cc_on等注释）            </span><br><span class="line">            &#125;))    //压缩</span><br><span class="line">            .pipe(gulp.dest(&apos;dist&apos;));  //输出</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    //压缩,合并 js</span><br><span class="line">    gulp.task(&apos;nolib-minifyjs&apos;, function() &#123;</span><br><span class="line">        return gulp.src(jsNoLibAry)      //需要操作的文件</span><br><span class="line">            .pipe(concat(&apos;map23dlib-nolib.js&apos;))    //合并所有js到main.js</span><br><span class="line">            .pipe(gulp.dest(&apos;dist&apos;))       //输出到文件夹</span><br><span class="line">            .pipe(rename(&#123;suffix: &apos;.min&apos;&#125;))   //rename压缩后的文件名</span><br><span class="line">            .pipe(uglify(&#123;</span><br><span class="line">                    mangle: false, //不混淆变量名</span><br><span class="line">                    compress:false,</span><br><span class="line">                    preserveComments: false //all 不删除注释，还可以为 false（删除全部注释），some（保留@preserve @license @cc_on等注释）            </span><br><span class="line">            &#125;))    //压缩</span><br><span class="line">            .pipe(gulp.dest(&apos;dist&apos;));  //输出</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">　　//默认命令，在cmd中输入gulp后，执行的就是这个任务(压缩js需要在检查js之后操作)</span><br><span class="line">    gulp.task(&apos;default&apos;,[&apos;clean&apos;],function() &#123;</span><br><span class="line">        gulp.start(&apos;minifycss&apos;,&apos;minifyjs&apos;,&apos;nolib-minifycss&apos;,&apos;nolib-minifyjs&apos;,&apos;imgcopy&apos;); </span><br><span class="line">　　&#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="最后一步了"><a href="#最后一步了" class="headerlink" title="最后一步了"></a>最后一步了</h4><p>运行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gulp</span><br></pre></td></tr></table></figure>
+
+<p>在根目录的dist文件下就会有你想要的文件</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2022/01/05/gulp/">使用gulp进行代码压缩</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">杨阳</a></p>
+        <p><span>发布时间:</span>2022-01-05, 16:38:25</p>
+        <p><span>最后更新:</span>2019-06-13, 13:55:09</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2022/01/05/gulp/" title="使用gulp进行代码压缩">http://blog.mapscloud-yy.com/2022/01/05/gulp/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://blog.mapscloud-yy.com/2022/01/05/gulp/　　作者: 杨阳" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2022/01/05/HexadecimalToDecimal/">
+                    经纬度转换
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2022/01/05/down/">
+                    前端图片下载
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#gulp使用指南"><span class="toc-number">1.</span> <span class="toc-text">gulp使用指南</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#先安装好吧"><span class="toc-number">1.1.</span> <span class="toc-text">先安装好吧</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#首先你要安装npm"><span class="toc-number">1.1.1.</span> <span class="toc-text">首先你要安装npm</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#然后就要安装gulp"><span class="toc-number">1.1.2.</span> <span class="toc-text">然后就要安装gulp</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#在项目根目录下创建一个名为-gulpfile-js-的文件"><span class="toc-number">1.1.3.</span> <span class="toc-text">在项目根目录下创建一个名为 gulpfile.js 的文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#最后一步了"><span class="toc-number">1.1.4.</span> <span class="toc-text">最后一步了</span></a></li></ol></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"使用gulp进行代码压缩　| Yang Yang Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2022/01/05/HexadecimalToDecimal/" title="上一篇: 经纬度转换">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2022/01/05/down/" title="下一篇: 前端图片下载">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2022/03/29/3dtiles/">3dtiles</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/01/05/My-New-blog/">我的博客开通啦</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/01/05/MTH/">MTH</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/01/05/HexadecimalToDecimal/">经纬度转换</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/01/05/gulp/">使用gulp进行代码压缩</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/01/05/down/">前端图片下载</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/01/05/CoordinateTtransformation-md/">坐标转换</a></li><li class="post-list-item"><a class="post-list-link" href="/2022/01/05/cesiumMap/">全息地球</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/06/04/灵光一闪2/">灵光一闪2</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/28/lgys-md/">lgys.md</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/19/vue-components/">vue 组件</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/14/regexp-md/">js 正则表达式</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/14/cesium-build/">cesium 打包命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/05/13/gh/">干货准备</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2019-2022 杨阳
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style="display:none">
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style="display:none">
+                        <span id="page-visit" title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+            
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
